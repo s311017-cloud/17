@@ -9,36 +9,28 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
  
-<title>17陳郁磬</title>
+<title>全球旅遊</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="1.webp" alt="" width="50" height="50"></a>
+      <a class="navbar-brand" href="#"><img src="99.jfif" alt="" width="100" height="100"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">首頁</a>
+            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://edu.gogofinder.com.tw/gogofinderReader/index.php?bid=117437020&p=1#page/1">sdg電子書</a>
+            <a class="nav-link" href="index1.html">創業理念</a>
           </li>
-            <a class="nav-link" href="https://www.qwhouse720.com/tour/a129433617806569?scene=scene_6df0e4a7bd9e2899">vr觀光導覽</a>
+            <a class="nav-link" href="index2.html">為什麼要選擇我們</a>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              個人作品集
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">作品一</a></li>
-              <li><a class="dropdown-item" href="#">作品二</a></li>
-              <li><a class="dropdown-item" href="#">作品三</a></li>
-            </ul>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="myself.html">作者簡介</a>
+            <a class="nav-link" href="index3.html">旅遊團介紹</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -48,125 +40,86 @@
       </div>
     </div>
   </nav>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="503489449286_87178463134285596491.webp" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images.jfif" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images (1).jfif" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images (2).jfif" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div class="container text-center bg-light">
-    <h2>生態城市</h2>
-    <p>早安你好歡迎光臨
-    </div>
+  <html lang="zh-Hant"><head><style>
+    .slider {
+      max-width: 600px;
+      height: 350px;
+      overflow: hidden; /* 隱藏沒輪到的圖片 */
+      margin: 0 auto;   /* 🆕 關鍵指令：上下外距 0，左右自動平分，達到完美置中 */
+    }
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;    /* 先把所有圖片藏起來 */
+    }
+    .slider img.active {
+      display: block;   /* 只有加了 .active 的圖片才顯示 */
+    }</style></head><body>
+  
+    <div class="slider">
+      <img src="Israel1.JPG" class="active"> <img src="Israel3.JPG">
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+    </div><script>
+    let index = 0;
+    const imgs = document.querySelectorAll('.slider img');
+    
+    setInterval(() => {
+      imgs[index].classList.remove('active');       /* 隱藏當前圖片 */
+      index = (index + 1) % imgs.length;            /* 換下一張（到最後一張後自動歸零） */
+      imgs[index].classList.add('active');          /* 顯示下一張圖片 */
+    }, 3000); /* 3000 毫秒 = 3 秒換一次 */</script></body></html>
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
       <div class="card">
-        <img src="503489449286_87178463134285596491.webp" class="card-img-top" alt="...">
+        <img src="Israel1.JPG" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">生態花園</h5>
-          <p class="card-text">生態花園（Ecological Garden）是一種模仿自然生態系統的設計，核心目標是「建立微型生物棲地」。它不追求人工修剪的整齊美感，而是強調人與動植物的自然共融。</p>
+          <h5 class="card-title">信仰的迴聲：哭牆前的靈魂傾聽</h5>
+          <p class="card-text">這張照片捕捉了位於耶路撒冷舊城的聖地——西牆（Western Wall，又稱哭牆）前，觸動人心的一幕。巨大的石牆由粗獷的淺色石塊砌成，縫隙中頑強地生長出綠色植物，更夾雜著無數張寫滿祈禱與心願的微小紙條，承載著千百年來的信仰厚度。
+
+            陽光斜射在平整的廣場上，幾位身著深色衣物、頭戴傳統基帕（Kippah）的小帽或包頭巾的男子，正靜靜地佇立於牆前。他們或將額頭緊貼著冰冷的石壁，或以手撫摩巨大古老的石塊，正閉眼進行深刻的祈禱與冥想。有的人低頭沉思，有的人遠觀瞻仰，整個空間瀰漫著一種神聖、肅穆且極具精神凝聚力的氛圍。這座牆不僅是一座歷史遺跡，更是無數旅人與信徒在漫漫長路中，用來對話靈魂、釘下心靈寄託的終極座標。</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <img src="images.jfif" class="card-img-top" alt="...">
+        <img src="Israel3.JPG" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">環保工廠</h5>
-          <p class="card-text">環保工廠（又稱綠色工廠）是指在生產過程中，透過技術創新與管理優化，將資源利用率最大化，並將環境影響降至最低的工業模式。這不僅是為了符合法規，更是企業實踐永續發展（ESG）的核心。</p>
+          <h5 class="card-title">暮色中軸線：當寂靜深海遇上不夜之城</h5>
+          <p class="card-text">這張照片展現了令人屏息的海岸線夜景，完美演繹了自然與現代文明的魔幻交界。畫面左側是無垠的地中海，黑色的海浪在夜色下靜靜翻湧，遠方天際線殘留著一抹如夢似幻的暗橘色晚霞，那是白日隱去前留下的最後溫存，與上方深邃的漸層夜空形成強烈對比。
+
+            與深海的寂靜相對應的，是右側延伸至遠方的特拉維夫海岸繁華市景。一條宛如金色絲帶的濱海大道點亮了夜空，溫暖的黃色路燈照亮了車流與蜿璨的濱海步道。沿岸高聳的現代化摩天大樓鱗次櫛比，與錯落有致的白色住宅區共同編織出璀璨的燈火。這張照片不僅記錄了白天與黑夜交替的魔幻時刻，更像是一顆閃耀在歷史與未來交會處的「極境座標」，散發著無與倫比的時尚與生命力。</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <img src="images (1).jfif" class="card-img-top" alt="...">
+        <img src="photo1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">工廠汙染</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title">湖畔遺世獨立的明信片天堂：哈修塔特</h5>
+          <p class="card-text">這張照片展現了被譽為世界上最美小鎮之一的奧地利哈修塔特（Hallstatt），宛如一幅從童話書中走出來的風景畫。畫面背景是高聳翠綠的阿爾卑斯山脈，茂密的森林順著陡峭的山坡蔓延，與左側深邃的遠山陰影共同構築了一道天然的綠色屏障。
+
+            山腳下，錯落有致的木質歐式傳統民居依山傍水而建。它們擁有深色的斜頂、白色的牆面與精緻的窗櫺，部分建築的陽台還點綴著鮮豔的花卉。小鎮的靈魂地標——擁有高聳尖塔的哥德式路德教堂（Christuskirche），優雅地佇立在湖畔最顯眼的位置。
+            
+            清澈碧綠的湖水在前方靜靜流淌，將這座依山而建的絕美村落溫柔地擁入懷中。整幅畫面色彩和諧、層次分明，流露出一股遠離塵囂的寧靜與詩意，這正是「全球旅程」渴望帶您親自凝視、深深刻進生命地圖裡的夢幻極境。</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <img src="images (2).jfif" class="card-img-top" alt="...">
+        <img src="photo2.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">環保種植</h5>
-          <p class="card-text">環保種植（又稱永續農業或綠色種植）的核心在於「與自然共生」，透過減少對化學物質的依賴，保護土地的長期生產力。</p>
+          <h5 class="card-title">皇家餘暉的金色迴響：熊布朗宮前的主廚序曲</h5>
+          <p class="card-text">這張照片捕捉了奧地利維也納最負盛名的皇家地標——熊布朗宮（Schönbrunn Palace，又稱美泉宮）的壯麗全景。整座巴洛克式宮殿建築群在晴空下舒展，標誌性的「美泉黃」外牆在陽光下泛著溫潤的歷史質感。規律對稱的拱窗、精緻的石雕頂飾與兩側延伸的翼樓，無一不彰顯著昔日哈布斯堡王朝的尊榮與大氣。
+
+            宮殿前方是極具包容力的巨大碎石廣場，中央鋪設著古樸的石磚步道。旅人們三三兩兩地在廣闊的空間中漫步、駐足或低頭交談，讓這座古老的皇家歷史遺跡多了一份當代生活的閒適。
+            
+            上方湛藍的天空舒展開薄薄的羽狀白雲，與宏偉的宮殿建築群相互映襯。這幅畫面完美融合了古典主義的嚴謹與歐洲午後的優雅，正是「全球旅程」精心為您安排的人文跨界巡禮，帶領您在帝國的金色餘暉中，釘下無可取代的生命記憶座標。</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          生態花園
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>生態花園</strong> （Ecological Garden）是一種模仿自然生態系統的設計，核心目標是「建立微型生物棲地」。它不追求人工修剪的整齊美感，而是強調人與動植物的自然共融。</code>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          環保工廠
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>環保工廠</strong> （又稱綠色工廠）是指在生產過程中，透過技術創新與管理優化，將資源利用率最大化，並將環境影響降至最低的工業模式。這不僅是為了符合法規，更是企業實踐永續發展（ESG）的核心。</code>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          工廠汙染
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>工廠汙染</strong> 是指工業生產過程中，將未經妥善處理的廢棄物排放至自然環境中，導致生態失衡與人類健康受損的現象。 <code></code>
-        </div>
-      </div>
-    </div>
-        </button>
-        <h2 class="accordion-header" id="headingfour">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
-            環保種植
-          </button>
-      </h2>
-      <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>環保種植</strong> （又稱永續農業或綠色種植）的核心在於「與自然共生」，透過減少對化學物質的依賴，保護土地的長期生產力。</code>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="fixed-bottom text-end"><a href="index.html"><img src="123.png" width="5%"></div>
-  <div class="container text-center bg-light">
-    <p>&copy; 陳郁磬</p>
-    </div>
+  <p style="text-align:center">© 311017 17 陳郁磬</p>
 </body>
 </html>
