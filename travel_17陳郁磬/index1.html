@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球旅程 Global Journeys Group - 創業理念</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- 品牌沉浸式色彩系統 --- */
+        :root {
+            --bg-dark: #00221C;         /* 品牌核心：深墨綠 */
+            --bg-light-dark: #002B24;   /* 輕墨綠（區塊交錯用） */
+            --accent-gold: #FFC107;     /* 品牌標誌：暖金 */
+            --text-cream: #F5F5DC;      /* 象牙米白（高質感閱讀） */
+            --text-muted: #A0B2B0;      /* 灰綠色（次要說明） */
+            --gold-gradient: linear-gradient(135deg, #FFD54F 0%, #FFC107 50%, #FF8F00 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-cream);
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 2;
+            letter-spacing: 1.5px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- 全域通用樣式 --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* --- 🆕 頂部獨立導覽列（整齊劃一樣式） --- */
+        .site-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-end; /* 讓首頁按鈕優雅地靠右對齊，不破壞中央大標題的視覺平衡 */
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-link {
+            color: var(--text-cream);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* 啟動狀態 (Active) 的暖金配色 */
+        .nav-link.active {
+            color: var(--accent-gold);
+        }
+
+        /* 導覽列底線動畫效果 */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: calc(100% - 32px);
+        }
+
+        /* --- 1. 創業起點（前導英雄區） --- */
+        .hero-story {
+            background: linear-gradient(to bottom, rgba(0,34,28,0.6) 0%, #00221C 100%), 
+                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920') no-repeat center/cover;
+            padding: 160px 0 60px 0; /* 🆕 稍微增加了 padding-top，留給頂部導覽列完美的呼吸空間 */
+            border-bottom: 1px solid rgba(255, 193, 7, 0.1);
+        }
+
+        .brand-tag {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 4px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        h1.story-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 40px 0;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-p {
+            font-size: 1.15rem;
+            color: #E0E7E6;
+            font-weight: 300;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        /* --- 大字金句排版 --- */
+        .highlight-quote {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            border-top: 1px solid rgba(255,193,7,0.3);
+            border-bottom: 1px solid rgba(255,193,7,0.3);
+            padding: 25px 0;
+            margin: 50px 0;
+            font-weight: 500;
+        }
+
+        /* --- 2. 核心哲學區塊 --- */
+        .philosophy-section {
+            background-color: var(--bg-light-dark);
+        }
+
+        h2.section-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold-gradient);
+        }
+
+        /* 心靈座標三部曲條列 */
+        .concept-block {
+            margin-bottom: 60px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .concept-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .concept-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: serif;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .concept-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-cream);
+        }
+
+        .concept-body {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* --- 3. 三大創業基石區 --- */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.02);
+            border-left: 4px solid var(--accent-gold);
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pillar-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        /* --- 4. 結語（終章區） --- */
+        .conclusion-section {
+            background: linear-gradient(to top, rgba(0,77,64,0.2) 0%, var(--bg-dark) 100%);
+            position: relative;
+        }
+
+        .conclusion-box {
+            border: 1px solid rgba(255,193,7,0.2);
+            padding: 50px 40px;
+            border-radius: 20px;
+            background-color: rgba(0, 34, 28, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .conclusion-box h2 {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        /* 響應式優化 */
+        @media (max-width: 768px) {
+            .hero-story { padding: 120px 0 60px 0; }
+            .nav-container { justify-content: center; } /* 行動裝置上導覽列自動居中，維持整齊 */
+            h1.story-title { font-size: 2rem; }
+            h2.section-title { font-size: 1.75rem; }
+            .highlight-quote { font-size: 1.15rem; }
+            .concept-block { padding: 25px; }
+            .conclusion-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house" style="font-size: 0.9rem; margin-right: 6px;"></i>首頁</a>
+        </div>
+    </nav>
+
+    <section class="hero-story">
+        <div class="container">
+            <span class="brand-tag text-center">Global Journeys Group</span>
+            <h1 class="story-title text-center">創業起點：在標準化的時代<br>重拾對世界的「驚奇之心」</h1>
+            
+            <p class="intro-p">當代旅遊業正處於一個前所未有的矛盾節點。科技的普及讓買一張機票、訂一間飯店變得動動手指即可完成，但旅遊的本質卻在高度標準化與網網紅景點的複製下，逐漸失去了靈魂。當所有人都在同一個角度拍照、走著同一個被演算法推薦的行程時，旅行不再是靈魂的洗滌，而變成了另一種形式的打卡勞動。</p>
+            
+            <p class="intro-p">「全球旅程 (Global Journeys Group)」的正是在這樣的反思中誕生。</p>
+            
+            <div class="highlight-quote text-center">
+                「我們深信，旅行不該是走馬看花的走線，而是一場對生命未知邊界的探索。」
+            </div>
+            
+            <p class="intro-p">我們的創業理念，立足於對這片藍色星球的敬畏，並以「跨越疆界，探索無限」為核心。然而，要在浩瀚的全球地圖中，為每一位疲憊的都市靈魂找到專屬的感動，我們需要一個引導的核心精神——這就是我們的產品與服務靈魂：「極境座標 (Terra Pin)」。</p>
+        </div>
+    </section>
+
+    <section class="section-padding philosophy-section text-center">
+        <div class="container">
+            <h2 class="section-title">核心哲學：何謂「極境座標 (Terra Pin)」？</h2>
+            <p style="color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem;">「極境座標」這個概念，完美具象化在我們集團的圖標之中：那顆被綠色流線包裹的地球右側，佇立著閃爍暖金色光芒的定位點（Pin）。它不僅僅是一個地理位置，更融合了三個層面的深刻創業理念：</p>
+            
+            <div class="concept-block">
+                <div class="concept-header">
+                    <div class="concept-number">01</div>
+                    <h3 class="concept-title">地理的極境：抵達地圖的邊緣</h3>
+                </div>
+                <p class="concept-body">我們不滿足於傳統的大眾觀光路線。對我們而言，「極境」是冰島深夜裡不息的極光、是撒哈拉沙漠深處滿天的星斗、是亞馬遜雨林中未被現代文明浸染的部落。我們致力於帶領旅客突破常規的舒適圈，抵達那些常人難以企及的地理邊界，在自然的壯麗與孤獨中，找回人類最原始的謙卑與感動。</p>
+            </div>
+
+            <div class="concept-block">
+                <div class="concept-header">
+                    <div class="concept-number">02</div>
+                    <h3 class="concept-title">體驗的極致：無可比擬的細節苛求</h3>
+                </div>
+                <p class="concept-body">極境代表著高難度，而我們存在的價值，就是將高難度的「探險」轉化為安全且舒適的「奢華體驗」。結合圖標中那架流暢飛行的飛機，我們透過全球化的地接供應鏈，在最荒涼的極境中，為客戶釘下最安心的座標。無論是極地裡的頂級暖氣帳篷，還是無人島上的私人主廚饗宴，我們在安全、服務與品質上追求極致，讓探險不再與克難畫上等號。</p>
+            </div>
+
+            <div class="concept-block">
+                <div class="concept-header">
+                    <div class="concept-number">03</div>
+                    <h3 class="concept-title">心靈的座標：尋找自我的歸屬</h3>
+                </div>
+                <p class="concept-body">這也是「極境座標」最核心的靈魂。每一位旅人出發，表面上是為了看世界，內心深處都是為了尋找自己。我們的行程設計不以「景點多寡」為KPI，而是以「心靈震盪」為導向。透過在特定時空下的深度停留，我們希望幫旅人在地圖上找到那個與他靈魂共鳴的點。那個點，就是他人生下半場重新出發的心靈坐標（Terra Pin）。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding text-center">
+        <div class="container">
+            <h2 class="section-title">我們的三大創業基石</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">為了落實「極境座標」的理念，全球旅程集團在營運上建構了三條鋼鐵般的支柱：</p>
+            
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <h3><i class="fa-solid fa-compass"></i> 一、 職人級的「行程建築師」團隊</h3>
+                    <p>我們不聘用傳統的導遊或業務，我們的團隊由極地探險家、人類學者、歷史學家以及資深奢華酒店試住員組成。每一條冠上「極境座標」的路線，都必須經過長達半年的實地踩線與文化考證，確保行程具備無可替代的獨特性與深度。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3><i class="fa-solid fa-laptop-code"></i> 二、 科技賦能的智慧定制</h3>
+                    <p>圖標中的地球經緯線，代表著我們用現代科技梳理全球資源的能力。我們開發了專屬的AI軌跡預測系統，能根據旅客的心理素質、體能狀況與歷史偏好，精準運算出最適合他的個人極境。科技是我們的骨架，人文是我們的血肉。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3><i class="fa-solid fa-leaf"></i> 三、 永續發展的「綠色承諾」</h3>
+                    <p>正如圖標中大面積的墨綠色，我們對大自然抱持著最高的崇敬。全球旅程承諾，每一筆「極境座標」行程的收入，都將提撥固定比例用於當地的生態保護與文化資產保存。我們追求的是「無痕旅遊」，讓極境之美，能永續留存給下一代。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding conclusion-section text-center">
+        <div class="container">
+            <div class="conclusion-box">
+                <h2>結語：點亮您地圖上的那顆金星</h2>
+                <p style="font-size: 1.1rem; text-align: justify; margin: 0 0 20px 0;">全球旅程 (Global Journeys Group) 的誕生，不是為了創辦一家規模最大的旅行社，而是為了掀起一場「旅遊的文藝復興」。</p>
+                <p style="font-size: 1.1rem; text-align: justify; margin: 0; color: var(--accent-gold); font-weight: 500;">世界很大，大到我們窮盡一生也無法走完；世界也很小，小到只要一顆「極境座標」，就能在心中縮影整個宇宙。我們邀請渴望告別平庸的您，與我們一同出發。讓那一抹深綠成為您最安心的後盾，讓那一條金色的航線，帶領您穿越地平線，在世界的極致之處，釘下屬於您無可取代的生命坐標。</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

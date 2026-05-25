@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球旅程 Global Journeys Group - 極境座標系列團</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- 品牌沉浸式色彩系統 --- */
+        :root {
+            --bg-dark: #00221C;         /* 品牌核心：深墨綠 */
+            --bg-light-dark: #002B24;   /* 輕墨綠（區塊交錯用） */
+            --accent-gold: #FFC107;     /* 品牌標誌：暖金 */
+            --text-cream: #F5F5DC;      /* 象牙米白（高質感閱讀） */
+            --text-muted: #A0B2B0;      /* 灰綠色（次要說明） */
+            --gold-gradient: linear-gradient(135deg, #FFD54F 0%, #FFC107 50%, #FF8F00 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-cream);
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 2;
+            letter-spacing: 1.5px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- 全域通用樣式 --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* --- 🆕 頂部獨立導覽列 --- */
+        .site-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-end; /* 讓按鈕優雅地靠右對齊，不擋中央大標題 */
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-link {
+            color: var(--text-cream);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* 啟動狀態 (Active) 的金色小圓點或底線提示 */
+        .nav-link.active {
+            color: var(--accent-gold);
+        }
+
+        /* 滑鼠懸停效果：優雅的暖金底線延展 */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: calc(100% - 32px);
+        }
+
+        /* --- 1. 前導英雄區 --- */
+        .hero-story {
+            background: linear-gradient(to bottom, rgba(0,34,28,0.6) 0%, #00221C 100%), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920') no-repeat center/cover;
+            padding: 160px 0 60px 0; /* 🆕 增加頂部間距避免標題撞到導覽列 */
+            border-bottom: 1px solid rgba(255, 193, 7, 0.1);
+        }
+
+        .brand-tag {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 4px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        h1.story-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 40px 0;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-p {
+            font-size: 1.15rem;
+            color: #E0E7E6;
+            font-weight: 300;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        /* --- 大字金句排版 --- */
+        .highlight-quote {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            border-top: 1px solid rgba(255,193,7,0.3);
+            border-bottom: 1px solid rgba(255,193,7,0.3);
+            padding: 25px 0;
+            margin: 50px 0;
+            font-weight: 500;
+        }
+
+        /* --- 2. 行程主題區塊 --- */
+        .philosophy-section {
+            background-color: var(--bg-light-dark);
+        }
+
+        h2.section-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold-gradient);
+        }
+
+        .concept-block {
+            margin-bottom: 60px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .concept-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .concept-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: serif;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .concept-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-cream);
+        }
+
+        .concept-body {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* --- 3. 精緻服務基石區 --- */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.02);
+            border-left: 4px solid var(--accent-gold);
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pillar-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        /* --- 4. 結語與召喚區塊 --- */
+        .conclusion-section {
+            background: linear-gradient(to top, rgba(0,77,64,0.2) 0%, var(--bg-dark) 100%);
+            position: relative;
+        }
+
+        .conclusion-box {
+            border: 1px solid rgba(255,193,7,0.2);
+            padding: 50px 40px;
+            border-radius: 20px;
+            background-color: rgba(0, 34, 28, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .conclusion-box h2 {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        /* 響應式優化 */
+        @media (max-width: 768px) {
+            .hero-story { padding: 120px 0 60px 0; }
+            .nav-container { justify-content: center; } /* 手機板選單改為置中更整齊 */
+            h1.story-title { font-size: 2rem; }
+            h2.section-title { font-size: 1.75rem; }
+            .highlight-quote { font-size: 1.15rem; }
+            .concept-block { padding: 25px; }
+            .conclusion-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house" style="font-size: 0.9rem; margin-right: 5px;"></i>首頁</a>
+        </div>
+    </nav>
+
+    <section class="hero-story">
+        <div class="container">
+            <span class="brand-tag text-center">Global Journeys Group</span>
+            <h1 class="story-title text-center">全球旅程：【極境座標】系列<br>一場重拾驚奇的感官覺醒</h1>
+            
+            <p class="intro-p">在這個隨手就能靠演算法買下機票、複製打卡照的速食旅遊時代，旅行是否逐漸淪為另一種形式的疲憊勞動？當所有人都在同一個觀景台、用同一個角度向世界宣告「到此一遊」時，我們正在失去與這片藍色星球深度對話的靈魂。「全球旅程 (Global Journeys Group)」正是在這樣的反思中誕生。我們拒絕隨波逐流，不賣罐頭行程，我們唯一的使命，是為渴望掙脫平庸的靈魂，在地圖上精準釘下無可取代的生命印記。</p>
+            
+            <p class="intro-p">這不是一趟普通的旅行，而是一場精心籌備的感官覺醒。我們深入常人難以企及的疆界，在荒涼中建構奢華，在未知中保障絕對的安全，這就是全球旅程最引以為傲的年度旗艦企劃——【極境座標 (Terra Pin)】頂級探索巡禮。</p>
+            
+            <div class="highlight-quote text-center">
+                「世界很大，不該只有一種走法。跟隨暖金色的定位標誌，前往地圖邊緣。」
+            </div>
+            
+            <p class="intro-p">我們精選全球三大極致目的地，揉合頂級職人帶路與一站式全包奢華服務，正式對您發出邀請。這一次，不只是去看世界，而是去重新找回那個在都市霓虹中迷失的自己。</p>
+        </div>
+    </section>
+
+    <section class="section-padding philosophy-section text-center">
+        <div class="container">
+            <h2 class="section-title">三大頂級奢華探索線</h2>
+            <p style="color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem;">我們不追求景點數量的堆疊，而是追求每一次呼吸、每一道風景帶給心靈的劇烈震盪。以下為本季限定出發的三大夢幻旅程：</p>
+            
+            <div class="concept-block">
+                <div class="concept-header">
+                    <div class="concept-number">01</div>
+                    <h3 class="concept-title">極北之境：冰島深夜的幽暗與極光交響</h3>
+                </div>
+                <p class="concept-body">遠離充滿遊覽車的傳統金圈路線，全球旅程將帶您搭乘專屬的「極地全地形超級卡車」，深入冰島未被破壞的內陸高地。我們將在深夜萬籟俱寂之時，踏上數萬年歷史的黑沙灘與藍冰洞。當夜空中那抹綠色與紫色的歐若拉魔幻舞動時，您無須在寒風中克難苦等——我們已在極光最盛的座標上，為您搭建了「360度全景星空玻璃暖氣帳篷」。一邊品嚐著頂級酒莊的年份香檳，一邊躺在奢華的絲絨床鋪上凝視宇宙的壯麗。這是一場將極致探險與天花板級舒適完美融合的感官饗宴，在自然的孤獨中，找回人類最初的謙卑與感動。</p>
+            </div>
+
+            <div class="concept-block">
+                <div class="concept-header">
+                    <div class="concept-number">02</div>
+                    <h3 class="concept-title">金色沙海：撒哈拉繁星下的遊牧奢華盛宴</h3>
+                </div>
+                <p class="concept-body">黃沙萬里，是大地最純粹的側臉。本行程捨棄了傳統走馬看花的駱駝騎行，改以私人直升機俯瞰阿特拉斯山脈的壯闊，隨後降落在撒哈拉深處、非對外開放的專屬野奢營地。這裡沒有喧囂的觀光客，只有無垠的沉靜。傍晚時分，伴隨著柏柏爾人悠揚的傳統火塘古樂，由米其林星級主廚為您量身定制一場「沙漠星空晚宴」，將在地食材轉化為舌尖上的交響樂。深夜，躺在完全無光害的沙丘腹地，看著銀河如瀑布般傾瀉而下，那顆佇立在沙漠中央的暖金色座標，將成為您此生最難忘的心靈歸屬。</p>
+            </div>
+
+            <div class="concept-block">
+                <div class="concept-header">
+                    <div class="concept-number">03</div>
+                    <h3 class="concept-title">失落文明：秘魯印加古道與亞馬遜雨林秘境</h3>
+                </div>
+                <p class="concept-body">這是一場跨越時空的人文跨界巡禮。我們將搭乘享譽全球的「東方快車（Hiram Bingham）」奢華景觀列車前往馬丘比丘，在歷史學家的隨團導覽下，避開擁擠人潮，獨家進入封閉保護區，細細品味失落帝國的黃昏。隨後，行程轉入亞馬遜雨林的神秘心臟地帶，入住榮獲國際綠色建築大獎的頂級生態水上Villa。清晨在晨霧與百鳥啼鳴中醒來，跟隨原住民嚮導尋訪未受污染的原始生態。這是一場將文明厚度與自然野性完美結合的深度震撼，為您的人生下半場釘下重新出發的精神坐標。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding text-center">
+        <div class="container">
+            <h2 class="section-title">為什麼全球旅程無可替代？</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">能將地圖邊緣的「冒險」打造成優雅的「傳奇」，源於我們對三大運營基石的鋼鐵堅持：</p>
+            
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <h3><i class="fa-solid fa-compass"></i> 基石一：職人級「行程建築師」隨團帶路</h3>
+                    <p>我們不聘用照本宣科的傳統導遊。全球旅程的隨團顧問由極地探險家、歷史學者、人類學家及資深奢華酒店試住員組成。每一條路線、每一個用餐時段，都經過長達半年的實地考察與嚴苛考證，確保行程具備不可複製的獨特性與文化深度，帶您看見標準化旅遊完全看不到的世界細節。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3><i class="fa-solid fa-laptop-code"></i> 基石二：4人成行，極致高隱私精緻小團</h3>
+                    <p>我們深知高規格旅客對私密與自由的渴望。本系列旅遊團嚴格限制每團人數，主打「4人即可成行」，絕不塞滿30、40人的吵雜大巴。行程不僅能根據您的體能、飲食習慣甚至睡眠節奏進行100%的動態客製化調整。這不是在走旅行社的趕路進度，這是屬於您自己的尊榮生活節奏。</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3><i class="fa-solid fa-leaf"></i> 基石三：24/7 全天候全球管家與綠色永續承諾</h3>
+                    <p>圖標中的那抹深綠，是我們最安心的安全承諾與對地球的敬畏。不論您在世界的哪一個時區，總公司與當地直營地接隨時在線，提供24小時不間斷的緊急管家服務。同時，我們承諾推行「無痕旅遊」，每一筆行程收入都將提撥固定比例用於目的地的生態保護與文化資產保存，讓極境之美得以永續。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding conclusion-section text-center">
+        <div class="container">
+            <div class="conclusion-box">
+                <h2>出發，在世界的極致之處相遇</h2>
+                <p style="font-size: 1.1rem; text-align: justify; margin: 0 0 20px 0;">全球旅程 (Global Journeys Group) 的誕生，從不是為了創辦一家規模最大的觀光批發旅行社，而是為渴望告別平庸生活方式的旅人，掀起一場「旅遊的文藝復興」。世界很大，大到我們窮盡一生也無法走完；世界也很小，小到只要跟隨著一顆【極境座標】，就能在靈魂中縮影整個宇宙的壯麗。</p>
+                <p style="font-size: 1.1rem; text-align: justify; margin: 0; color: var(--accent-gold); font-weight: 500;">本季各航線全球僅限定收客3組，限額尊榮預約中。讓我們用直營的全球網絡，為您省下無謂的中間差價；用100%全包式的透明合約，給您最優雅奢華的保障。讓那一抹深綠成為您最安心的後盾，讓金色航線帶您跨越疆界——這一次，換您成為朋友圈裡被投以羨慕目光的故事主角。</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

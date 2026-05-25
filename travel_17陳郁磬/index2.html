@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html><html lang="zh-Hant"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>全球旅程 - 為什麼選擇我們</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+        <style>
+            /* --- 核心主題色彩設定 --- */
+            :root {
+                --bg-dark: #00221C;        /* 深墨綠背景 */
+                --card-bg: #00362F;        /* 稍微亮一點的墨綠卡片 */
+                --accent-gold: #FFC107;    /* 品牌暖金點綴色 */
+                --text-cream: #F5F5DC;     /* 溫暖的象牙米白字體 */
+                --text-muted: #CFD8DC;     /* 次要內文灰色 */
+            }
+    
+            body {
+                background-color: var(--bg-dark);
+                color: var(--text-cream);
+                font-family: 'Noto Sans TC', sans-serif;
+                line-height: 1.8;
+                margin: 0;
+                padding: 0 20px 60px 20px; /* 🆕 移除上方 padding，改由導覽列與 container 控制 */
+            }
+    
+            /* --- 🆕 頂部獨立導覽列（整齊劃一樣式） --- */
+            .site-nav {
+                width: 100%;
+                padding: 24px 0 10px 0;
+            }
+    
+            .nav-container {
+                display: flex;
+                justify-content: flex-end; /* 讓首頁按鈕優雅靠右，維持整體排版整齊 */
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+    
+            .nav-link {
+                color: var(--text-cream);
+                text-decoration: none;
+                font-size: 1.05rem;
+                font-weight: 500;
+                letter-spacing: 2px;
+                padding: 8px 16px;
+                position: relative;
+                transition: color 0.3s ease;
+            }
+    
+            /* 啟動狀態 (Active) 的暖金配色 */
+            .nav-link.active {
+                color: var(--accent-gold);
+            }
+    
+            /* 導覽列底線動畫效果 */
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 16px;
+                width: 0;
+                height: 2px;
+                background-color: var(--accent-gold);
+                transition: width 0.3s ease;
+            }
+    
+            .nav-link:hover::after,
+            .nav-link.active::after {
+                width: calc(100% - 32px);
+            }
+    
+            .container {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding-top: 20px; /* 🆕 與導覽列保持舒適間距 */
+            }
+    
+            /* --- 網頁大標題 --- */
+            .page-header {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+    
+            .page-header h1 {
+                font-size: 2.5rem;
+                color: var(--text-cream);
+                margin-bottom: 15px;
+                font-weight: 700;
+            }
+    
+            .page-header h1 span {
+                color: var(--accent-gold);
+            }
+    
+            .page-header p {
+                font-size: 1.1rem;
+                color: var(--text-muted);
+                max-width: 700px;
+                margin: 0 auto;
+            }
+    
+            /* --- 主題大區塊 --- */
+            .section-title {
+                font-size: 1.8rem;
+                color: var(--text-cream);
+                border-left: 5px solid var(--accent-gold);
+                padding-left: 15px;
+                margin: 50px 0 25px 0;
+                font-weight: 700;
+            }
+    
+            /* --- 格線排版 (Cards Grid) --- */
+            .grid-layout {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+    
+            /* --- 高質感卡片設計 --- */
+            .promo-card {
+                background-color: var(--card-bg);
+                border: 1px solid rgba(255, 193, 7, 0.15);
+                border-radius: 16px;
+                padding: 30px;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .promo-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent-gold);
+                box-shadow: 0 10px 30px rgba(255, 193, 7, 0.1);
+            }
+    
+            .card-icon {
+                font-size: 2rem;
+                color: var(--accent-gold);
+                margin-bottom: 20px;
+            }
+    
+            .promo-card h3 {
+                font-size: 1.3rem;
+                color: var(--text-cream);
+                margin: 0 0 15px 0;
+                font-weight: 700;
+            }
+    
+            .promo-card p {
+                font-size: 1rem;
+                color: var(--text-muted);
+                margin: 0;
+                text-align: justify;
+            }
+    
+            /* --- 底部行銷文案區塊 --- */
+            .copywriting-section {
+                background: linear-gradient(135deg, #00362F 0%, #00221C 100%);
+                border: 2px dashed rgba(255, 193, 7, 0.3);
+                border-radius: 20px;
+                padding: 40px;
+                margin-top: 60px;
+            }
+    
+            .copy-box {
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 12px;
+                padding: 25px;
+                margin-bottom: 25px;
+                border-left: 4px solid var(--accent-gold);
+            }
+    
+            .copy-box:last-child {
+                margin-bottom: 0;
+            }
+    
+            .copy-tag {
+                display: inline-block;
+                background-color: var(--accent-gold);
+                color: var(--bg-dark);
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+    
+            .copy-box p {
+                font-size: 1.1rem;
+                color: var(--text-cream);
+                margin: 0;
+                font-style: italic;
+            }
+    
+            /* 響應式微調 */
+            @media (max-width: 768px) {
+                body { padding: 0 15px 40px 15px; }
+                .nav-container { justify-content: center; } /* 🆕 手機板導覽列自動置中，維持整齊 */
+                .page-header h1 { font-size: 2rem; }
+                .copywriting-section { padding: 25px; }
+            }
+        </style></head><body>
+    
+        <nav class="site-nav">
+            <div class="nav-container">
+                <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house" style="font-size: 0.9rem; margin-right: 6px;"></i>首頁</a>
+            </div>
+        </nav>
+    
+        <div class="container">
+    
+        <header class="page-header">
+            <h1>為什麼選擇 <span>全球旅程</span>？</h1>
+            <p>在競爭激烈的旅遊市場中，我們拒絕當一家「普通的旅行社」。針對您最在乎的痛點，我們給出一擊必中的安心理由。</p>
+        </header>
+    
+        <h2 class="section-title">一、 價格與價值面：打破「高質感＝高不可攀」的迷思</h2>
+        <div class="grid-layout">
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3>直接源頭控價，沒有中間商賺差價</h3>
+                <p>我們深耕全球地接與頂級飯店供應鏈，所有行程直接與當地資源對接，砍掉傳統旅行社層層轉包的佣金。我們不打價格戰，但我們保證讓您用中高價位的預算，享受市場頂級奢華的待遇。</p>
+            </div>
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-receipt"></i></div>
+                <h3>100% 透明報價，絕無隱藏消費</h3>
+                <p>討厭出團後被強迫推銷、狂走購物站，或被莫名索取各類小費嗎？我們承諾「全包式報價」，餐食、門票、司機導遊小費全含，合約寫多少就是多少，讓您出門真正零負擔。</p>
+            </div>
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-gift"></i></div>
+                <h3>早鳥與老客戶尊榮回饋</h3>
+                <p>我們提供市場最具誠意的早鳥階梯式優惠，以及專屬老客戶的「無限卡點數回饋」，點數可直接折抵下一次的客製化行程，讓您的旅遊基金越滾越大。</p>
+            </div>
+        </div>
+    
+        <h2 class="section-title">二、 獨家體驗面：緊扣「極境座標」的品牌靈魂</h2>
+        <div class="grid-layout">
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-compass"></i></div>
+                <h3>市場唯一！獨家開發的『非觀光客路線』</h3>
+                <p>網紅景點大家都去過，但我們能帶您去演算法找不到的地方。我們擁有專屬的『行程建築師』團隊，每年親自踩線，為您在世界角落釘下獨家的極境座標——無論是私人海島的夕陽晚宴，還是深夜的冰川健行，我們只做別人複製不來的體驗。</p>
+            </div>
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-user-group"></i></div>
+                <h3>拒絕複製貼上！真正量身訂製的精緻小團</h3>
+                <p>我們不接 30、40 人的吵雜大團。我們主打 4人成行、精緻小團。根據您的興趣、體能甚至飲食習慣，100% 客製化調整。這不是在走旅行社的進度，這是屬於您自己的生活節奏。</p>
+            </div>
+        </div>
+    
+        <h2 class="section-title">三、 售後與安全面：安心承諾</h2>
+        <div class="grid-layout">
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>24/7 全天候全球在線守護</h3>
+                <p>時差 and 突發狀況是旅行的大敵。我們提供 24 小時不間斷的『全球管家應變系統』。無論您在巴黎還是冰島，只要一通電話，總公司與當地地接團隊立刻同步為您解決任何突發狀況。您只管負責出發，安全交給我們。</p>
+            </div>
+            <div class="promo-card">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>金牌履約保證，出遊最有安全感</h3>
+                <p>我們擁有高於國家法定的履約責任險與各項旅遊保險。不論大環境如何變動，我們始終把旅客的權益與安全放在第一位。圖標上的那抹深綠，就是我們給您最穩重的安全承諾。</p>
+            </div>
+        </div>
+    
+        <h2 class="section-title">四、 行銷文案範例（可直接用於網站 / 粉專）</h2>
+        <div class="copywriting-section">
+            <div class="copy-box">
+                <span class="copy-tag"><i class="fa-solid fa-star"></i> 主打高 CP 值與透明度</span>
+                <p>「旅行，不該是一場精打細算的冒險。在全球旅程，我們用直營的全球網絡，為您省下無謂的轉手差價；用 100% 透明的合約，拒絕所有強迫購物。我們不比最低價，因為您的假期品質無法打折；但我們敢保證，同等預算下，您在我們這能訂下最極致的風景。」</p>
+            </div>
+            <div class="copy-box">
+                <span class="copy-tag"><i class="fa-solid fa-heart"></i> 主打獨特性與情懷</span>
+                <p>「為什麼選擇我們？因為我們不只是賣機票 and 飯店，我們是在地圖上，為您的靈魂尋找專屬的『極境座標』。如果您厭倦了千篇一律的打卡行程，今年，請把假期交給我們。去一次沒人去過的地方，看一次震撼心靈的風景，這一次，換您成為朋友圈裡被羨慕的故事主角。」</p>
+            </div>
+        </div></div>
+    
+</body>
+</html>
